@@ -23,7 +23,7 @@ with st.container():
 # """
 # st.info(content2)
 
-col3, col4 = st.columns(2)s
+col3, col4 = st.columns(2)
 
 df = pandas.read_csv("data.csv", sep=",")
 with col3:
