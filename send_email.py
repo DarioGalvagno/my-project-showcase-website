@@ -7,7 +7,7 @@ def send_email(message):
     username = email_username  # Use the imported username
     password = email_password  # Use the imported password
 
-    receiver = "darioggalvagno@gmail.com"
+    receiver = "youremail@gmail.com"
     context = ssl.create_default_context()
 
     with smtplib.SMTP_SSL(host, port, context=context) as server:
