@@ -1,3 +1,3 @@
 # credentials.py
-email_username = "darioggalvagno@gmail.com"
-email_password = "vqphwtbdcpxemqeb"
+email_username = "ccccm"
+email_password = "xxxxx"
