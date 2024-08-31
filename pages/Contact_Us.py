@@ -11,7 +11,6 @@ with st.form(key="email_form"):
 Subject: New email from {user_email}
     
 From: {user_email}
-
 {raw_message}
 """
     button = st.form_submit_button("Submit")
