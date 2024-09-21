@@ -30,14 +30,14 @@ except UnicodeDecodeError as e:
     st.error(f"Error decoding file: {e}")
 
 with col3:
-    for index, row in df[:3].iterrows():
+    for index, row in df[:2].iterrows():
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/" + row["image"])
         st.write(f"[Url link]({row['url']})")
 
 with col4:
-    for index, row in df[3:].iterrows():
+    for index, row in df[2:].iterrows():
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/" + row["image"])
