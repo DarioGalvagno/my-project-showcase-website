@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas
+import pandas as pd
 
 st.set_page_config(layout="wide")
 col1, col2 = st.columns(2)
@@ -17,28 +17,28 @@ with col2:
     st.info(content)
 with st.container():
     st.write("Below you can find some of the apps I have built in Python. Feel free to contact me!")
-## alternatively you can can use the following below
-# content2 = """
-# Below you can find some of the apps I have built in Python. Feel free to contact me!
-# """
-# st.info(content2)
 
 col3, col4 = st.columns(2)
+
 try:
-    df = pandas.read_csv("data.csv", sep=",")
-except UnicodeDecodeError as e:
-    st.error(f"Error decoding file: {e}")
+    df = pd.read_csv('data.csv', sep=",", encoding='utf-8')
+except Exception as e:
+    st.error(f"Error loading data: {e}")
+    df = None  # Ensure df is defined
 
-with col3:
-    for index, row in df[:2].iterrows():
-        st.header(row["title"])
-        st.write(row["description"])
-        st.image("images/" + row["image"])
-        st.write(f"[Url link]({row['url']})")
+if df is not None:
+    with col3:
+        for index, row in df[:2].iterrows():
+            st.header(row["title"])
+            st.write(row["description"])
+            st.image("images/" + row["image"])
+            st.write(f"[Url link]({row['url']})")
 
-with col4:
-    for index, row in df[2:].iterrows():
-        st.header(row["title"])
-        st.write(row["description"])
-        st.image("images/" + row["image"])
-        st.write(f"[Url link]({row['url']})")
+    with col4:
+        for index, row in df[2:].iterrows():
+            st.header(row["title"])
+            st.write(row["description"])
+            st.image("images/" + row["image"])
+            st.write(f"[Url link]({row['url']})")
+else:
+    st.warning("No data available to display.")
