@@ -24,8 +24,11 @@ with st.container():
 # st.info(content2)
 
 col3, col4 = st.columns(2)
+try:
+    df = pandas.read_csv("data.csv", sep=",")
+except UnicodeDecodeError as e:
+    st.error(f"Error decoding file: {e}")
 
-df = pandas.read_csv("data.csv", sep=",")
 with col3:
     for index, row in df[:3].iterrows():
         st.header(row["title"])
