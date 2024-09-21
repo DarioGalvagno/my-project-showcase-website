@@ -31,7 +31,7 @@ with col3:
         st.header(row["title"])
         st.write(row["description"])
         st.image("images/" + row["image"])
-        st.write(f"[Url link]]({row['url']})")
+        st.write(f"[Url link]({row['url']})")
 
 with col4:
     for index, row in df[3:].iterrows():
