@@ -4,3 +4,5 @@ PDF Invoices,A script that reads invoice records from Excel files and automatica
 Image Scale Converter,This program allows users to capture a photo and apply a variety of scales/ filters to transform the image,https://photoconvertmadebydariogalvagno.streamlit.app/,11.png
 MRZ Checker,A program that check MRZ Line in Passport,https://mrz-checker.streamlit.app/,21.png
 The Best Company webpage,This project involves the creation of a professional and engaging webpage for a fictitious company.,https://thebestcompanywebsite.streamlit.app/,22.png
+Weather API,A REST API built with Python and Flask to serve historical weather data for various cities.,https://github.com/DarioGalvagno/Weather-API,6.png
+Visualizing Weather Forecast,A data web app that visualizes the weather forecast for the next five days of any city.,,16.png
