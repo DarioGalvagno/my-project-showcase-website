@@ -1,9 +1,10 @@
 title,description,url,image
 Todo App,A distraction-free web app to help you focus on creating and completing tasks.,https://dariogalvagno-my-todo-webpage-web-jcoryj.streamlit.app/,1.png
 PDF Invoices,A script that reads invoice records from Excel files and automatically generates PDF invoices.,https://github.com/DarioGalvagno/Generate_pdf_invoces_from_excel,4.png
-Image Scale Converter,This program allows users to capture a photo and apply a variety of scales/ filters to transform the image,https://photoconvertmadebydariogalvagno.streamlit.app/,11.png
-MRZ Checker,A program that check MRZ Line in Passport,https://mrz-checker.streamlit.app/,21.png
+Image Scale Converter,This program allows users to capture a photo and apply a variety of scales/ filters to transform the image.,https://photoconvertmadebydariogalvagno.streamlit.app/,11.png
+MRZ Checker,A program that check MRZ Line in Passport.,https://mrz-checker.streamlit.app/,21.png
 The Best Company webpage,This project involves the creation of a professional and engaging webpage for a fictitious company.,https://thebestcompanywebsite.streamlit.app/,22.png
 Weather API,A REST API built with Python and Flask to serve historical weather data for various cities.,https://github.com/DarioGalvagno/Weather-API,6.png
-Visualizing Weather Forecast,https://weatherforecastbydario.streamlit.app/,,16.png
-MapInsight,"ntuitive data visualization app that allows users to explore the relationships between various global factors such as happiness, GDP, generosity, and corruption. By selecting specific metrics, users can generate interactive world maps that highlight country-level data, alongside dynamic correlation plots that reveal how these factors influence one another. Whether you're interested in uncovering patterns or gaining insights into global well-being",https://mapinsight.streamlit.app/,23.png
+Visualizing Weather Forecast,A data web app that visualizes the weather forecast for the next five days of any city,https://weatherforecastbydario.streamlit.app/,16.png
+MapInsight,"Intuitive data visualization app that allows users to explore the relationships between various global factors such as happiness, GDP, generosity, and corruption. By selecting specific metrics, users can generate interactive world maps that highlight country-level data, alongside dynamic correlation plots that reveal how these factors influence one another. Whether you're interested in uncovering patterns or gaining insights into global well-being.",https://mapinsight.streamlit.app/,23.png
+Explore the Cosmos,"This app is a simple NASA Astronomy Picture of the Day (APOD) viewer. It automatically fetches and displays the latest APOD image from NASA's API, along with its title, date, and a brief explanation. The app refreshes daily to provide users with NASA's featured astronomy image and its context.",https://explore-the-cosmos.streamlit.app/,24.png
