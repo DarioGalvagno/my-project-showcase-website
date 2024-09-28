@@ -5,4 +5,5 @@ Image Scale Converter,This program allows users to capture a photo and apply a v
 MRZ Checker,A program that check MRZ Line in Passport,https://mrz-checker.streamlit.app/,21.png
 The Best Company webpage,This project involves the creation of a professional and engaging webpage for a fictitious company.,https://thebestcompanywebsite.streamlit.app/,22.png
 Weather API,A REST API built with Python and Flask to serve historical weather data for various cities.,https://github.com/DarioGalvagno/Weather-API,6.png
-Visualizing Weather Forecast,A data web app that visualizes the weather forecast for the next five days of any city.,,16.png
+Visualizing Weather Forecast,https://weatherforecastbydario.streamlit.app/,,16.png
+MapInsight,"ntuitive data visualization app that allows users to explore the relationships between various global factors such as happiness, GDP, generosity, and corruption. By selecting specific metrics, users can generate interactive world maps that highlight country-level data, alongside dynamic correlation plots that reveal how these factors influence one another. Whether you're interested in uncovering patterns or gaining insights into global well-being",https://mapinsight.streamlit.app/,23.png
