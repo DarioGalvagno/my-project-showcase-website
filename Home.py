@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(layout="wide")
+
+st.sidebar.title("Navigation")
+selection = st.sidebar.selectbox("Go to", ["Home", "Contact Me"])
 col1, col2 = st.columns(2)
 
 with col1:
