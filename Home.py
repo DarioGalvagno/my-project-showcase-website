@@ -28,7 +28,7 @@ except Exception as e:
 
 if df is not None:
     with col3:
-        for index, row in df[:5].iterrows():
+        for index, row in df[:6].iterrows():
             st.header(row["title"])
             st.write(row["description"])
             st.image("images/" + row["image"])
