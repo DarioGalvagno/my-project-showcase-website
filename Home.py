@@ -1,14 +1,24 @@
 import streamlit as st
 import pandas as pd
+from send_email import send_email  # Make sure this is imported correctly
 
+# Set the page layout to wide
 st.set_page_config(layout="wide")
 
-col1, col2 = st.columns(2)
+# Create a sidebar for navigation
+st.sidebar.title("Navigation")
+selection = st.sidebar.selectbox("Go to", ["Home", "Contact Me"])
 
-with col1:
-    st.image("images/photo.png")
-with col2:
-    st.title("Dario Galvagno")
+# Home section
+if selection == "Home":
+    # Display Home content
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.image("images/photo.png")
+    with col2:
+        st.title("Dario Galvagno")
+
     content = """
     Hi there! I’m Dario, an analyst with a strong background in project management and a passion for music. 
     When I’m not diving into data, you’ll find me playing the bass or practicing boxing and kickboxing. 
@@ -16,30 +26,58 @@ with col2:
     Thanks for stopping by, and I hope you enjoy exploring my work!
     """
     st.info(content)
-with st.container():
+
     st.write("Below you can find some of the apps I have built in Python. Feel free to contact me!")
 
-col3, col4 = st.columns(2)
+    col3, col4 = st.columns(2)
 
-try:
-    df = pd.read_csv('data.csv', sep=",", encoding='utf-8')
-except Exception as e:
-    st.error(f"Error loading data: {e}")
-    df = None  # Ensure df is defined
+    try:
+        df = pd.read_csv('data.csv', sep=",", encoding='utf-8')
+    except Exception as e:
+        st.error(f"Error loading data: {e}")
+        df = None  # Ensure df is defined
 
-if df is not None:
-    with col3:
-        for index, row in df[:5].iterrows():
-            st.header(row["title"])
-            st.write(row["description"])
-            st.image("images/" + row["image"])
-            st.write(f"[Url link]({row['url']})")
+    if df is not None:
+        with col3:
+            for index, row in df[:5].iterrows():
+                st.header(row["title"])
+                st.write(row["description"])
+                st.image("images/" + row["image"])
+                st.write(f"[Url link]({row['url']})")
 
-    with col4:
-        for index, row in df[5:].iterrows():
-            st.header(row["title"])
-            st.write(row["description"])
-            st.image("images/" + row["image"])
-            st.write(f"[Url link]({row['url']})")
-else:
-    st.warning("No data available to display.")
+        with col4:
+            for index, row in df[5:].iterrows():
+                st.header(row["title"])
+                st.write(row["description"])
+                st.image("images/" + row["image"])
+                st.write(f"[Url link]({row['url']})")
+    else:
+        st.warning("No data available to display.")
+
+# Contact Me section
+elif selection == "Contact Me":
+    # Display Contact form
+    st.header("Contact Me")
+
+    with st.form(key="email_form"):
+        user_email = st.text_input("Your email address")
+        raw_message = st.text_area("Your message")
+
+        # Prepare the message
+        message = f"""\ 
+        Subject: New email from {user_email}
+
+        From: {user_email}
+        {raw_message}
+        """
+
+        # Submit button
+        button = st.form_submit_button("Submit")
+        if button:
+            try:
+                # Call the send_email function
+                send_email(message)
+                st.info("Your email was sent successfully")
+            except Exception as e:
+                st.error(f"Failed to send email: {e}")
+
