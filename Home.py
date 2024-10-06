@@ -3,8 +3,6 @@ import pandas as pd
 
 st.set_page_config(layout="wide")
 
-st.sidebar.title("Navigation")
-selection = st.sidebar.selectbox("Go to", ["Home", "Contact Me"])
 col1, col2 = st.columns(2)
 
 with col1:
@@ -45,27 +43,3 @@ if df is not None:
             st.write(f"[Url link]({row['url']})")
 else:
     st.warning("No data available to display.")
-elif selection == "Contact Me":
-st.header("Contact Me")
-
-# Contact form
-with st.form(key="email_form"):
-    user_email = st.text_input("Your email address")
-    raw_message = st.text_area("Your message")
-
-    message = f"""\ 
-Subject: New email from {user_email}
-
-From: {user_email}
-{raw_message}
-"""
-    button = st.form_submit_button("Submit")
-
-    # Check if the button is pressed
-    if button:
-        try:
-            # Sending email through your send_email function
-            send_email(message)
-            st.info("Your email was sent successfully")
-        except Exception as e:
-            st.error(f"Failed to send email: {e}")
