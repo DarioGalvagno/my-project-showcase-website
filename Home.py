@@ -28,14 +28,14 @@ except Exception as e:
 
 if df is not None:
     with col3:
-        for index, row in df[:4].iterrows():
+        for index, row in df[:6].iterrows():
             st.header(row["title"])
             st.write(row["description"])
             st.image("images/" + row["image"])
             st.write(f"[Url link]({row['url']})")
 
     with col4:
-        for index, row in df[4:].iterrows():
+        for index, row in df[6:].iterrows():
             st.header(row["title"])
             st.write(row["description"])
             st.image("images/" + row["image"])
